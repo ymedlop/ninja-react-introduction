@@ -1,0 +1,6 @@
+$("#btn").click(function() {
+  $(this).toggleClass("highlight")
+  $(this).text() === 'Add Highlight'
+    ? $(this).text('Remove Highlight')
+    : $(this).text('Add Highlight')
+})

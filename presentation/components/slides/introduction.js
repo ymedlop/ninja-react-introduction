@@ -2,11 +2,10 @@ import React from "react";
 import {
     Heading,
     Image,
-    Text,
     Cite
 } from "spectacle";
 
-export class Welcome extends React.Component {
+export class IntroductionSlide extends React.Component {
     render() {
         return (
             <div>

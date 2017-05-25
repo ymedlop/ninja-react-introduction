@@ -14,6 +14,8 @@ import {
   Text
 } from "spectacle";
 
+import CodeSlide from 'spectacle-code-slide';
+
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
 
@@ -22,9 +24,9 @@ import createTheme from "spectacle/lib/themes/default";
 
 // Import my slides
 import {
-  Welcome,
+    IntroductionSlide,
   ReactSlide
-} from './components';
+} from './components/slides';
 
 // Require CSS
 require("normalize.css");
@@ -50,16 +52,33 @@ const theme = createTheme({
   secondary: "Helvetica"
 });
 
-export default class Presentation extends React.Component {
+export default class extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+      <Deck
+        transition={["zoom", "slide"]}
+        transitionDuration={500}
+        theme={theme}
+      >
+
         <Slide transition={["zoom"]} bgColor="primary">
-          <Welcome />
+          <IntroductionSlide />
         </Slide>
+
         <Slide transition={["fade"]} bgColor="primary">
           <ReactSlide />
         </Slide>
+
+        <CodeSlide
+          size={6}
+          transition={["zoom", "fade"]}
+            lang="js"
+            code={require("raw-loader!../assets/examples/imperative.example")}
+            ranges={[
+                { loc: [0, 270], title: "Programación imperativa" },
+            ]}
+        />
+
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading size={6} textColor="primary" caps>Typography</Heading>
           <Heading size={1} textColor="secondary">Heading 1</Heading>

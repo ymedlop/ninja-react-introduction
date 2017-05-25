@@ -1,0 +1,27 @@
+machine:
+  node:
+    version: 5.11.1
+
+general:
+  branches:
+    only:
+      - master
+
+dependencies:
+  pre:
+    - yarn install
+    - npm install -g firebase-tools
+
+test:
+  override:
+    - echo "test"
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run build
+      - mkdir public
+      - cp index.html public/index.html
+      - cp dist public/dist
+      - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
