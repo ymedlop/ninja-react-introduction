@@ -1,0 +1,31 @@
+export default class HighlightButton extends React.Component {
+  constructor(props) {
+    super(props);
+    const highlight = props.highlight || false;
+    this.state = { highlight };
+    this.handleOnclick = this.handleOnclick.bind(this);
+  }
+  handleOnclick() {
+    this.setState(prevState => ({ highlight: !prevState.highlight }));
+  }
+  getClassName() {
+    const { highlight } = this.state;
+    return highlight ? 'highlight' : '';
+  }
+  renderText() {
+    const { highlight } = this.state;
+    let text = 'Add Highlight';
+    if (highlight) text = 'Remove Highlight';
+    return text;
+  }
+  render() {
+    return (
+      <button
+        className={this.getClassName()}
+        onClick={this.handleOnclick}
+      >
+         {this.renderText()}
+      </button>
+    )
+  }
+}
