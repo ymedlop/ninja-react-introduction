@@ -13,7 +13,6 @@ export class IntroductionSlide extends React.Component {
                     Introducción a
                 </Heading>
                 <Image src='https://raw.githubusercontent.com/ymedlop/website/master/website/static/img/react/react.png'/>
-                <Image src='https://ymedlop.es/img/avatar.jpg'/>
                 <Cite>Yeray Medina López</Cite>
             </div>
         );

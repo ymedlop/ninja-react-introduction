@@ -1,16 +1,14 @@
 import React from "react";
 import {
-    Heading,
-    Text,
+  Image
 } from "spectacle";
 
 export class ReactSlide extends React.Component {
     render() {
+        const { image } = this.props;
         return (
             <div>
-               <Text size={6} textColor="secondary">
-                   React es una libreria javascript para el desarrollo y representaciones de las interfaces de usuario de nuestras aplicaciones web.
-               </Text>
+              <Image src={image} />
             </div>
         );
     }

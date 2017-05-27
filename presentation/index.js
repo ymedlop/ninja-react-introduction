@@ -3,15 +3,9 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
   Deck,
-  Heading,
-  ListItem,
-  List,
-  Quote,
   Slide,
-  Text
+  SlideSet
 } from "spectacle";
 
 import CodeSlide from 'spectacle-code-slide';
@@ -22,10 +16,15 @@ import preloader from "spectacle/lib/utils/preloader";
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
-// Import my slides
+
 import {
-    IntroductionSlide,
-  ReactSlide
+  ComponentDefinitionSlide,
+  TemplateSlide
+} from './components/slides/components';
+import {
+  IntroductionSlide,
+  ReactSlide,
+  FeaturesSlide,
 } from './components/slides';
 
 // Require CSS
@@ -34,10 +33,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  react: require("../assets/images/react.png"),
 };
 
 preloader(images);
@@ -61,13 +57,28 @@ export default class extends React.Component {
         theme={theme}
       >
 
-        <Slide transition={["zoom"]} bgColor="primary">
-          <IntroductionSlide />
-        </Slide>
+        <SlideSet>
+          <Slide transition={["zoom"]} bgColor="primary">
+            <IntroductionSlide />
+          </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <ReactSlide />
-        </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <ReactSlide image={images.react} />
+          </Slide>
+
+          <Slide transition={["fade"]} bgColor="primary">
+            <FeaturesSlide />
+          </Slide>
+        </SlideSet>
+
+        <SlideSet>
+          <Slide transition={["fade"]} bgColor="primary">
+            <ComponentDefinitionSlide />
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <TemplateSlide />
+          </Slide>
+        </SlideSet>
 
         <CodeSlide
           size={6}
@@ -78,31 +89,6 @@ export default class extends React.Component {
                 { loc: [0, 270], title: "Programación imperativa" },
             ]}
         />
-
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
-        </Slide>
       </Deck>
     );
   }
