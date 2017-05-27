@@ -1,6 +1,5 @@
 // Import React
 import React from "react";
-import Iframe from 'react-iframe'
 
 // Import Spectacle Core tags
 import {
@@ -28,7 +27,8 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 const images = {
-  react: require("../assets/images/react.png"),
+  reactold: require("../assets/images/reactold.png"),
+  reactnew: require("../assets/images/reactnew.png"),
   danview: require("../assets/images/DanView.png"),
   wrong: require("../assets/images/wrong.jpg"),
 };
@@ -84,10 +84,13 @@ export default class extends React.Component {
             <Image src={images.wrong} />
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
+            <Image src={images.reactold} />
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
             <Image src={images.danview} />
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
-            <Image src={images.react} />
+            <Image src={images.reactnew} />
           </Slide>
         </SlideSet>
 
@@ -149,24 +152,24 @@ export default class extends React.Component {
             </Text>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
-            <Iframe
+            <iframe
                 width="100%"
                 height="500px"
-                url="//jsfiddle.net/ymedlop/qzttu2av/7/embedded/js,html,result/dark/"
-                display="initial"
-                position="relative"
+                src="//jsfiddle.net/ymedlop/qzttu2av/7/embedded/js,html,result/dark/"
+                style={{ position: 'relative', display: 'initial' }}
                 allowFullScreen
+                frameBorder="0"
             />
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
-            <Iframe
-              url="https://codesandbox.io/embed/rvxk0E96"
+            <iframe
+              src="https://codesandbox.io/embed/rvxk0E96"
               width="100%"
               height="500px"
               sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-              display="initial"
-              position="relative"
+              style={{ position: 'relative', display: 'initial' }}
               allowFullScreen
+              frameBorder="0"
             />
           </Slide>
         </SlideSet>

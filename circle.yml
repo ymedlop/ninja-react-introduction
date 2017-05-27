@@ -23,5 +23,5 @@ deployment:
       - npm run build
       - mkdir public
       - cp index.html public/index.html
-      - cp dist public/dist
+      - cp -R dist public/dist
       - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
