@@ -11,7 +11,9 @@ import {
   Heading,
   Image,
   Cite,
-  Text
+  Text,
+  List,
+  ListItem
 } from "spectacle";
 
 import CodeSlide from 'spectacle-code-slide';
@@ -31,6 +33,9 @@ const images = {
   reactnew: require("../assets/images/reactnew.png"),
   danview: require("../assets/images/DanView.png"),
   wrong: require("../assets/images/wrong.jpg"),
+  end: require("../assets/images/end.jpg"),
+  introduction: require("../assets/images/introduction.jpg"),
+  panic: require("../assets/images/panic.jpg")
 };
 
 preloader(images);
@@ -53,7 +58,6 @@ export default class extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
-
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={6} fit caps lineHeight={1} textColor="secondary">
             Introduction to
@@ -62,26 +66,24 @@ export default class extends React.Component {
           <Cite>Yeray Medina López</Cite>
         </Slide>
 
-        <SlideSet>
           <Slide transition={["fade"]} bgColor="primary">
             <Heading size={3} textColor="secondary">
               What is React.js?
             </Heading>
+            <Image src={images.introduction}/>
           </Slide>
+
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <BlockQuote>
-              <Quote size={1}>React is a view layer that uses virtual DOM for performance.</Quote>
+              <Quote textSize="1.5em">React is a view layer that uses virtual DOM for performance.</Quote>
               <Cite>Someone</Cite>
             </BlockQuote>
           </Slide>
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <BlockQuote>
-              <Quote>React can be used as the V in MVC..</Quote>
+              <Quote textSize="1.5em">React can be used as the V in MVC..</Quote>
               <Cite>Someone</Cite>
             </BlockQuote>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
-            <Image src={images.wrong} />
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
             <Image src={images.reactold} />
@@ -92,9 +94,14 @@ export default class extends React.Component {
           <Slide transition={["fade"]} bgColor="primary">
             <Image src={images.reactnew} />
           </Slide>
-        </SlideSet>
 
-        <SlideSet>
+          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+            <BlockQuote>
+              <Quote textSize="1.5em">In React, your entire application’s UI is built using function composition and JSX is an abstraction over those functions.</Quote>
+              <Cite>Someone</Cite>
+            </BlockQuote>
+          </Slide>
+
           <Slide transition={["fade"]} bgColor="primary">
             <Heading size={3} textColor="secondary">
               Declarative
@@ -102,13 +109,13 @@ export default class extends React.Component {
           </Slide>
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <BlockQuote>
-              <Quote>Declarative views make your code more predictable and easier to debug.</Quote>
+              <Quote textSize="1.5em">Declarative views make your code more predictable and easier to debug.</Quote>
               <Cite>React Documentation</Cite>
             </BlockQuote>
           </Slide>
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <BlockQuote>
-              <Quote>Act of programming in languages that conform to the mental model of the developer rather than the operational model of the machine</Quote>
+              <Quote textSize="1.5em">Act of programming in languages that conform to the mental model of the developer rather than the operational model of the machine</Quote>
             </BlockQuote>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
@@ -117,12 +124,12 @@ export default class extends React.Component {
             </Heading>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
-            <Text>
+            <Text textSize="1.5em">
               Write a function called double which takes in an array of numbers and returns a new array after doubling every item in that array
             </Text>
           </Slide>
           <CodeSlide
-            size={6}
+            sizeList={6}
             transition={["zoom", "fade"]}
               lang="js"
               code={require("raw-loader!../assets/examples/imperative1.example")}
@@ -147,9 +154,9 @@ export default class extends React.Component {
             ]}
           />
           <Slide transition={["fade"]} bgColor="primary">
-            <Text>
+            <Heading size={6} textColor="secondary">
               DOM Example
-            </Text>
+            </Heading>
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
             <iframe
@@ -172,9 +179,7 @@ export default class extends React.Component {
               frameBorder="0"
             />
           </Slide>
-        </SlideSet>
 
-        <SlideSet>
           <Slide transition={["fade"]} bgColor="primary">
             <Heading size={3} textColor="secondary">
               Components Based
@@ -182,11 +187,149 @@ export default class extends React.Component {
           </Slide>
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <BlockQuote>
-              <Quote>Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.</Quote>
+              <Quote textSize="1.5em">Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.</Quote>
               <Cite>React Documentation</Cite>
             </BlockQuote>
           </Slide>
-        </SlideSet>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={6} textColor="secondary">
+              Two types of data that control a component.
+            </Heading>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} textColor="secondary">
+              Props
+            </Heading>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+            <BlockQuote>
+              <Quote textSize="1.5em">Props are set by the parent and they are fixed throughout the lifetime of a component.</Quote>
+              <Cite>React Documentation</Cite>
+            </BlockQuote>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+            <BlockQuote>
+              <Quote textSize="1.5em">
+                Any component that receives props should consider that data immutable and owned by the parent
+              </Quote>
+              <Cite>Brad Westfall from css tricks</Cite>
+            </BlockQuote>
+          </Slide>
+          <CodeSlide
+            size={6}
+            transition={["zoom", "fade"]}
+            lang="jsx"
+            code={require("raw-loader!../assets/examples/props2.example")}
+            ranges={[
+              { loc: [0, 273], title: "React parent component" },
+            ]}
+          />
+          <CodeSlide
+            size={6}
+            transition={["zoom", "fade"]}
+            lang="jsx"
+            code={require("raw-loader!../assets/examples/props1.example")}
+            ranges={[
+              { loc: [0, 273], title: "React component" },
+            ]}
+          />
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} textColor="secondary">
+              State
+            </Heading>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={6} textColor="secondary">
+              The state of a component is managed by it. The state of a component may change over the life of the component affecting its children.
+            </Heading>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <iframe
+              src="https://codesandbox.io/embed/rvxk0E96"
+              width="100%"
+              height="500px"
+              sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+              style={{ position: 'relative', display: 'initial' }}
+              allowFullScreen
+              frameBorder="0"
+            />
+          </Slide>
+
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={6} textColor="secondary">
+              Be careful. The State make the components.
+            </Heading>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+            <BlockQuote>
+              <Quote textSize="1.0em">
+                <List textSize="1.0em" padding="0">
+                  <ListItem textSize="1.0em">Difficult to test</ListItem>
+                  <ListItem textSize="1.0em">Difficult to reason about</ListItem>
+                  <ListItem textSize="1.0em">Easy to put business logic in the component</ListItem>
+                  <ListItem textSize="1.0em">Difficult to share information to others.</ListItem>
+                </List>
+              </Quote>
+              <Cite>Cam Jackson from 9 things every React.js beginner should know</Cite>
+            </BlockQuote>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={6} textColor="secondary">
+              <Image src={images.panic} />
+            </Heading>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <List>
+              <ListItem textSize="1em">Presentational Components</ListItem>
+              <ListItem textSize="1em">Container Components</ListItem>
+            </List>
+          </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={3} textColor="secondary">
+            Presentational Components
+          </Heading>
+          <Text textSize="1em">
+            Stateless components
+          </Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote textSize="1.5em">
+              They have no idea how the props they received came to be. They have no idea about state.
+            </Quote>
+            <Cite>Brad Westfall from css tricks</Cite>
+          </BlockQuote>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={3} textColor="secondary">
+            Container Components
+          </Heading>
+          <Text textSize="1em">
+            Stateful components
+          </Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote textSize="1.5em">They serve as a intermediary between Presentational Components and the rest of the application</Quote>
+            <Cite>Brad Westfall from css tricks</Cite>
+          </BlockQuote>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote textSize="1.5em">Container Components can be created just like any other React component</Quote>
+            <Cite>Brad Westfall from css tricks</Cite>
+          </BlockQuote>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={6} fit caps lineHeight={1} textColor="secondary">
+            Congratulations you know React.js!!
+          </Heading>
+          <Image src={images.end}/>
+        </Slide>
+
       </Deck>
     );
   }

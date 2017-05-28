@@ -1,0 +1,11 @@
+const UserInfo = (props) => (
+    <div className="UserInfo">
+      <Avatar
+        photo={props.user.photo}
+        name={props.user.name}
+      />
+      <div className="UserInfo-name">
+        {props.user.name}
+      </div>
+    </div>
+ );

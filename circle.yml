@@ -8,8 +8,9 @@ general:
       - master
 
 dependencies:
+  override:
+    - yarn
   pre:
-    - yarn install
     - npm install -g firebase-tools
 
 test:
@@ -20,7 +21,7 @@ deployment:
   production:
     branch: master
     commands:
-      - npm run build
+      - yarn build
       - mkdir public
       - cp index.html public/index.html
       - cp -R dist public/dist

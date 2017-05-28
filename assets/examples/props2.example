@@ -1,0 +1,8 @@
+const App = () => (
+<div>
+    Show my UserInfo:
+    <UserInfo
+        user={{ name: 'monkey', photo: ''}}
+    />
+</div>
+);
