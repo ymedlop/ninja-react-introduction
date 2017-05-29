@@ -35,7 +35,8 @@ const images = {
   wrong: require("../assets/images/wrong.jpg"),
   end: require("../assets/images/end.jpg"),
   introduction: require("../assets/images/introduction.jpg"),
-  panic: require("../assets/images/panic.jpg")
+  panic: require("../assets/images/panic.jpg"),
+  flux: require("../assets/images/flux.png"),
 };
 
 preloader(images);
@@ -58,16 +59,16 @@ export default class extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={6} fit caps lineHeight={1} textColor="secondary">
+        <Slide transition={["zoom"]} bgColor="secondary">
+          <Heading size={6} fit caps lineHeight={1} textColor="primary">
             Introduction to
           </Heading>
           <Image src='https://raw.githubusercontent.com/ymedlop/website/master/website/static/img/react/react.png'/>
           <Cite>Yeray Medina López</Cite>
         </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={3} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={3} textColor="primary">
               What is React.js?
             </Heading>
             <Image src={images.introduction}/>
@@ -85,25 +86,56 @@ export default class extends React.Component {
               <Cite>Someone</Cite>
             </BlockQuote>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary">
             <Image src={images.reactold} />
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary">
             <Image src={images.danview} />
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary">
             <Image src={images.reactnew} />
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <BlockQuote>
-              <Quote textSize="1.5em">In React, your entire application’s UI is built using function composition and JSX is an abstraction over those functions.</Quote>
-              <Cite>Someone</Cite>
-            </BlockQuote>
-          </Slide>
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Core Concepts of React.js
+          </Heading>
+        </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={3} textColor="secondary">
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            JSX
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote textSize="1.5em">In React, your entire application’s UI is built using function composition and JSX is an abstraction over those functions.</Quote>
+            <Cite>Someone</Cite>
+          </BlockQuote>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Unidirectional Data Flow
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Reconciliation
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={6} textColor="primary">
+            The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+          </Heading>
+        </Slide>
+
+
+        <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={3} textColor="primary">
               Declarative
             </Heading>
           </Slide>
@@ -118,12 +150,12 @@ export default class extends React.Component {
               <Quote textSize="1.5em">Act of programming in languages that conform to the mental model of the developer rather than the operational model of the machine</Quote>
             </BlockQuote>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={5} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={5} textColor="primary">
               Imperative vs Declarative
             </Heading>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary">
             <Text textSize="1.5em">
               Write a function called double which takes in an array of numbers and returns a new array after doubling every item in that array
             </Text>
@@ -153,12 +185,12 @@ export default class extends React.Component {
               { loc: [4, 3], image: 'http://s2.quickmeme.com/img/96/9663bb227666e5f862c971df66150ed18f2373794ca058310ecbd2479c726d60.jpg' },
             ]}
           />
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={6} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={6} textColor="primary">
               DOM Example
             </Heading>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary">
             <iframe
                 width="100%"
                 height="500px"
@@ -168,7 +200,7 @@ export default class extends React.Component {
                 frameBorder="0"
             />
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary">
             <iframe
               src="https://codesandbox.io/embed/rvxk0E96"
               width="100%"
@@ -180,8 +212,8 @@ export default class extends React.Component {
             />
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={3} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={3} textColor="primary">
               Components Based
             </Heading>
           </Slide>
@@ -191,13 +223,13 @@ export default class extends React.Component {
               <Cite>React Documentation</Cite>
             </BlockQuote>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={6} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={6} textColor="primary">
               Two types of data that control a component.
             </Heading>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={3} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={3} textColor="primary">
               Props
             </Heading>
           </Slide>
@@ -233,17 +265,17 @@ export default class extends React.Component {
               { loc: [0, 273], title: "React component" },
             ]}
           />
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={3} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={3} textColor="primary">
               State
             </Heading>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={6} textColor="secondary">
-              The state of a component is managed by it. The state of a component may change over the life of the component affecting its children.
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={6} textColor="primary">
+              The state of a component is managed by it. The state of a component may change over the life of the component.
             </Heading>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary">
             <iframe
               src="https://codesandbox.io/embed/rvxk0E96"
               width="100%"
@@ -255,8 +287,8 @@ export default class extends React.Component {
             />
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={6} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={6} textColor="primary">
               Be careful. The State make the components.
             </Heading>
           </Slide>
@@ -273,20 +305,20 @@ export default class extends React.Component {
               <Cite>Cam Jackson from 9 things every React.js beginner should know</Cite>
             </BlockQuote>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={6} textColor="secondary">
+          <Slide transition={["fade"]} bgColor="secondary">
+            <Heading size={6} textColor="primary">
               <Image src={images.panic} />
             </Heading>
           </Slide>
-          <Slide transition={["fade"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary">
             <List>
               <ListItem textSize="1em">Presentational Components</ListItem>
               <ListItem textSize="1em">Container Components</ListItem>
             </List>
           </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={3} textColor="secondary">
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} textColor="primary">
             Presentational Components
           </Heading>
           <Text textSize="1em">
@@ -302,8 +334,8 @@ export default class extends React.Component {
           </BlockQuote>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={3} textColor="secondary">
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} textColor="primary">
             Container Components
           </Heading>
           <Text textSize="1em">
@@ -323,11 +355,35 @@ export default class extends React.Component {
           </BlockQuote>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={6} fit caps lineHeight={1} textColor="secondary">
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Bonus Track
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={6} textColor="primary">
+            Flux is a pattern for managing data flow in your application. The most important concept is that data flows in one direction
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Image src={images.flux} />
+        </Slide>
+
+
+        <Slide transition={["zoom"]} bgColor="secondary">
+          <Heading size={6} fit caps lineHeight={1} textColor="primary">
             Congratulations you know React.js!!
           </Heading>
           <Image src={images.end}/>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="secondary">
+          <Heading size={9} fit caps lineHeight={1} textColor="primary">
+            Want to know more ?
+          </Heading>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/QW5TE4vrklU" frameborder="0" allowfullscreen></iframe>
         </Slide>
 
       </Deck>
