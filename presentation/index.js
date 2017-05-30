@@ -37,6 +37,7 @@ const images = {
   introduction: require("../assets/images/introduction.jpg"),
   panic: require("../assets/images/panic.jpg"),
   flux: require("../assets/images/flux.png"),
+  yoda: require("../assets/images/yoda.jpg")
 };
 
 preloader(images);
@@ -371,9 +372,12 @@ export default class extends React.Component {
           <Image src={images.flux} />
         </Slide>
 
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Image src={images.yoda}/>
+        </Slide>
 
-        <Slide transition={["zoom"]} bgColor="secondary">
-          <Heading size={6} fit caps lineHeight={1} textColor="primary">
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={6} fit caps lineHeight={1} textColor="secondary">
             Congratulations you know React.js!!
           </Heading>
           <Image src={images.end}/>
