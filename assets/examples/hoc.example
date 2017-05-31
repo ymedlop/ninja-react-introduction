@@ -1,7 +1,4 @@
 const Enhance = WrappedComponent => class extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   componentWillEnter(cb) {
     this.refs.slide.componentWillEnter(cb)
   }
@@ -26,11 +23,11 @@ const Enhance = WrappedComponent => class extends React.Component {
   }
 };
 
-const QuoteSlide = (props) => (
+const QuoteSlide = Enhance((props) => (
   <div>
     <BlockQuote>
       <Quote textSize="1.5em">{props.quote}</Quote>
       <Cite>{props.cite}</Cite>
     </BlockQuote>
   </div>
-);
+));

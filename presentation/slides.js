@@ -230,6 +230,27 @@ const Slides = (props) => (
       <SlideSet>
         <Slide bgColor="secondary">
           <Heading size={3} textColor="primary">
+            Component Lifecycle
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={6} textColor="primary">
+            The life cycle of a component is divided into three states
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={6} textColor="primary">
+            Two handlers for each state, "will" function will be calling before the state, "did" function will be calling after entering the state.
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary" textColor="primary">
+          <Image width="100%" height="500px" src={props.images.life} />
+        </Slide>
+      </SlideSet>
+
+      <SlideSet>
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
             Composition
           </Heading>
         </Slide>
@@ -294,10 +315,47 @@ const Slides = (props) => (
             source={require("raw-loader!../assets/examples/hoc1.example")}
           />
         </Slide>
-        <QuoteSlide
-          quote="Don't Mutate the Original Component. Use Composition."
-          cite="React Documentation"
-        />
+
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Bonus Track
+          </Heading>
+        </Slide>
+
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Recompose
+          </Heading>
+        </Slide>
+
+        <Slide bgColor="secondary" textColor="primary">
+            <List textSize="1.0em" padding="0">
+              <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>
+                <Link
+                  href="https://github.com/acdlite/recompose"
+                  target="blank"
+                  textColor="primary"
+                >
+                  Recompose
+                </Link>
+                <Link
+                  href="https://egghead.io/lessons/react-compose-multiple-higher-order-components-together-using-recompose"
+                  target="blank"
+                  textColor="primary"
+                >
+                  EggHead course
+                </Link>
+                <Link
+                  href="https://github.com/timkindberg/egghead-recompose"
+                  target="blank"
+                  textColor="primary"
+                >
+                  Egghead course repo
+                </Link>
+              </ListItem>
+            </List>
+        </Slide>
+
       </SlideSet>
 
       <SlideSet>

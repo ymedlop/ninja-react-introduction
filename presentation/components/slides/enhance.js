@@ -2,9 +2,6 @@ import React from "react";
 import { Slide } from "spectacle";
 
 const Enhance = WrappedComponent => class extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   componentWillEnter(cb) {
     this.refs.slide.componentWillEnter(cb)
   }
