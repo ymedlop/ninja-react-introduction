@@ -1,0 +1,4 @@
+<QuoteSlide
+  quote="Don't Mutate the Original Component. Use Composition."
+  cite="React Documentation"
+/>

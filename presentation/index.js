@@ -23,6 +23,8 @@ const images = {
   linkedin: require("../assets/images/linkedin.png"),
   logo: require("../assets/images/logo.png"),
   qa: require("../assets/images/qa.jpg"),
+  blog: require("../assets/images/blog.png"),
+  twitter: require("../assets/images/twitter.png"),
 };
 
 preloader(images);
@@ -41,6 +43,16 @@ const user = {
       name: 'linkdin',
       link: 'https://www.linkedin.com/in/ymedlop',
       photo: images.linkedin
+    },
+    {
+      name: 'twitter',
+      link: 'https://twitter.com/ymedlop',
+      photo: images.twitter
+    },
+    {
+      name: 'blog',
+      link: 'https://ymedlop.es',
+      photo: images.blog
     },
   ]
 };

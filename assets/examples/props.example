@@ -1,0 +1,25 @@
+export default (props) => (
+  <div>
+      <List textAlign="center">
+        {
+          props.user.social.map((item, index) =>
+            <ListItem
+              key={index}
+              style={{ 'display': 'inline-block', 'padding-right': '20px' }}
+            >
+              <Link
+                href={item.link}
+                target="blank"
+              >
+                <Image
+                  width="70px"
+                  height="70px"
+                  src={item.photo}
+                />
+              </Link>
+            </ListItem>
+          )
+        }
+      </List>
+  </div>
+);

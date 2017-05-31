@@ -22,12 +22,12 @@ export default (props) => (
         textSize="1.5em"
         style={{ 'listStylePosition': 'outside' }}
       >
-        <ListItem>
+        <ListItem style={{ display: 'inline-flex' }}>
           <Text textColor="primary" textSize="1.5em">
               {props.user.name}
           </Text>
         </ListItem>
-        <ListItem>
+        <ListItem style={{ display: 'inline-flex' }}>
           <Text textColor="primary" textSize="1em">
             {props.user.company}
           </Text>

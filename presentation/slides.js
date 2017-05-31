@@ -10,7 +10,9 @@ import {
   Text,
   List,
   ListItem,
-  SlideSet
+  SlideSet,
+  CodePane,
+  Link
 } from "spectacle";
 import CodeSlide from 'spectacle-code-slide';
 import createTheme from "spectacle/lib/themes/default";
@@ -47,13 +49,13 @@ const Slides = (props) => (
         <QuoteSlide quote="React is a view layer that uses virtual DOM for performance." cite="Someone" />
         <QuoteSlide quote="React can be used as the V in MVC." cite="Someone" />
         <Slide bgColor="secondary">
-          <Image src={props.images.reactold} />
+          <Image width="100%" src={props.images.reactold} />
         </Slide>
         <Slide bgColor="secondary">
-          <Image src={props.images.danview} />
+          <Image width="100%" src={props.images.danview} />
         </Slide>
         <Slide bgColor="secondary">
-          <Image src={props.images.reactnew} />
+          <Image width="100%" src={props.images.reactnew} />
         </Slide>
         <Slide bgColor="secondary">
           <Heading size={3} textColor="primary">
@@ -67,6 +69,11 @@ const Slides = (props) => (
           <Heading size={3} textColor="primary">
             JSX
           </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Text textColor="primary" textSize="1.0em">
+            JSX is an XML/HTML-like syntax used by React that extends ECMAScript so that XML/HTML-like text can co-exist with JavaScript/React code.
+          </Text>
         </Slide>
         <QuoteSlide
           quote="In React, your entire application’s UI is built using function composition and JSX is an abstraction over those functions."
@@ -161,14 +168,18 @@ const Slides = (props) => (
           quote="Any component that receives props should consider that data immutable and owned by the parent"
           cite="Brad Westfall from css tricks"
         />
-        <CodeSlide
-          size={6}
-          lang="jsx"
-          code={require("raw-loader!../assets/examples/props1.example")}
-          ranges={[
-            { loc: [0, 273], title: "Props" },
-          ]}
-        />
+        <Slide bgColor="secondary">
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/examples/props.example")}
+          />
+        </Slide>
+        <Slide bgColor="secondary">
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/examples/props1.example")}
+          />
+        </Slide>
         <Slide bgColor="secondary">
           <Heading size={3} textColor="primary">
             State
@@ -178,6 +189,12 @@ const Slides = (props) => (
           <Heading size={6} textColor="primary">
             The state of a component is managed by it. The state of a component may change over the life of the component.
           </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/examples/state.example")}
+          />
         </Slide>
         <Slide bgColor="secondary">
           <iframe
@@ -199,27 +216,32 @@ const Slides = (props) => (
           <BlockQuote>
             <Quote textSize="1.0em">
               <List textSize="1.0em" padding="0">
-                <ListItem textSize="1.0em">Difficult to test</ListItem>
-                <ListItem textSize="1.0em">Difficult to reason about</ListItem>
-                <ListItem textSize="1.0em">Easy to put business logic in the component</ListItem>
-                <ListItem textSize="1.0em">Difficult to share information to others.</ListItem>
+                <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>Difficult to test</ListItem>
+                <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>Difficult to reason about</ListItem>
+                <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>Easy to put business logic in the component</ListItem>
+                <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>Difficult to share information to others.</ListItem>
               </List>
             </Quote>
             <Cite>Cam Jackson from 9 things every React.js beginner should know</Cite>
           </BlockQuote>
         </Slide>
+      </SlideSet>
+
+      <SlideSet>
         <Slide bgColor="secondary">
-          <Heading size={6} textColor="primary">
-            <Image src={props.images.panic} />
+          <Heading size={3} textColor="primary">
+            Composition
           </Heading>
+        </Slide>
+        <Slide bgColor="secondary" textColor="primary">
+          <Text textSize="1em" textColor="primary">
+            React components can make use of other React components.
+          </Text>
         </Slide>
         <Slide bgColor="secondary" textColor="primary">
           <Heading size={3} textColor="primary">
             Presentational Components
           </Heading>
-          <Text textSize="1em">
-            Stateless components
-          </Text>
         </Slide>
         <QuoteSlide
           quote="They have no idea how the props they received came to be. They have no idea about state."
@@ -229,9 +251,6 @@ const Slides = (props) => (
           <Heading size={3} textColor="primary">
             Container Components
           </Heading>
-          <Text textSize="1em">
-            Stateful components
-          </Text>
         </Slide>
         <QuoteSlide
           quote="They serve as a intermediary between Presentational Components and the rest of the application"
@@ -241,13 +260,138 @@ const Slides = (props) => (
           quote="Container Components can be created just like any other React component"
           cite="Brad Westfall from css tricks"
         />
+        <Slide bgColor="secondary" textColor="primary">
+          <iframe
+            width='100%'
+            height='500px'
+            scrolling='no'
+            title='gwZbYa'
+            src='//codepen.io/gaearon/embed/gwZbYa/?height=265&theme-id=dark&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/gaearon/pen/gwZbYa/'>gwZbYa</a> by Dan Abramov (<a href='https://codepen.io/gaearon'>@gaearon</a>) on <a href='https://codepen.io'>CodePen</a>.
+          </iframe>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Pattern HOC
+          </Heading>
+        </Slide>
+        <QuoteSlide
+          quote="They are a pattern that emerges from React's compositional nature."
+          cite="React Documentation"
+        />
+        <QuoteSlide
+          quote="A higher-order component is a function that takes a component and returns a new component."
+          cite="React Documentation"
+        />
+        <Slide bgColor="secondary">
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/examples/hoc.example")}
+          />
+        </Slide>
+        <Slide bgColor="secondary">
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/examples/hoc1.example")}
+          />
+        </Slide>
+        <QuoteSlide
+          quote="Don't Mutate the Original Component. Use Composition."
+          cite="React Documentation"
+        />
       </SlideSet>
 
-      <Slide bgColor="secondary">
-        <Heading size={3} textColor="primary">
-          Composition
-        </Heading>
-      </Slide>
+      <SlideSet>
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Dev Tools
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary" textColor="primary">
+          <List textSize="1.0em" padding="0">
+            <ListItem textSize="1.0em">
+              <Link
+                href="https://yarnpkg.com/lang/en/"
+                target="blank">
+                Yarn
+              </Link>
+            </ListItem>
+            <ListItem textSize="1.0em">
+              <Link
+                textColor="primary"
+                href="https://webpack.github.io/"
+                target="blank">
+                Webpack
+              </Link>
+            </ListItem>
+            <ListItem textSize="1.0em">
+              <Link
+                textColor="primary"
+                href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi"
+                target="blank"
+              >
+                React Developer Tools
+              </Link>
+            </ListItem>
+            <ListItem textSize="1.0em">
+              <Link
+                textColor="primary"
+                href="https://github.com/airbnb/javascript/blob/master/react/README.md"
+                target="blank"
+              >
+                Airbnb React/JSX Style Guide
+              </Link>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Testing
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary" textColor="primary">
+          <List textSize="1.0em" padding="0">
+            <ListItem textSize="1.0em">
+              <Link textColor="primary" href="https://facebook.github.io/jest/" target="blank">Jest</Link>
+            </ListItem>
+            <ListItem textSize="1.0em">
+              <Link textColor="primary" href="https://github.com/airbnb/enzyme" target="blank">Enzyme</Link>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            CSS
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary" textColor="primary">
+          <List textSize="1.0em" padding="0">
+            <ListItem textSize="1.0em">
+              <Link textColor="primary" href="https://github.com/threepointone/glamor" target="blank">Glamour</Link>
+            </ListItem>
+            <ListItem textSize="1.0em">
+              <Link textColor="primary" href="https://github.com/gajus/react-css-modules" target="blank">CSS Modules</Link>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            React Libraries
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary" textColor="primary">
+          <List textSize="1.0em" padding="0">
+            <ListItem textSize="1.0em">
+              <Link textColor="primary" href="https://github.com/ReactTraining/react-router" target="blank">React Router</Link>
+            </ListItem>
+            <ListItem textSize="1.0em">
+              <Link textColor="primary" href="http://www.material-ui.com" target="blank">React Material</Link>
+            </ListItem>
+            <ListItem textSize="1.0em">
+              <Link textColor="primary" href="https://github.com/FormidableLabs/spectacle" target="blank">Spectacle</Link>
+            </ListItem>
+          </List>
+        </Slide>
+      </SlideSet>
 
       <SlideSet>
         <Slide bgColor="secondary">
@@ -261,7 +405,7 @@ const Slides = (props) => (
           </Heading>
         </Slide>
         <Slide bgColor="secondary">
-          <Image src={props.images.flux} />
+          <Image src={props.images.flux} width="100%"/>
         </Slide>
       </SlideSet>
 

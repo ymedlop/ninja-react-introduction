@@ -1,11 +1,21 @@
-const UserInfo = (props) => (
-    <div className="UserInfo">
-      <Avatar
-        photo={props.user.photo}
-        name={props.user.name}
-      />
-      <div className="UserInfo-name">
-        {props.user.name}
-      </div>
-    </div>
- );
+const user = {
+  photo: images.avatar,
+  name: 'Yeray Medina López',
+  company: '@BBVA Paas Studio',
+  social: [
+    {
+      name: 'github',
+      link: 'https://github.com/ymedlop',
+      photo: images.github
+    },
+    {
+      name: 'linkdin',
+      link: 'https://www.linkedin.com/in/ymedlop',
+      photo: images.linkedin
+    },
+  ]
+};
+
+const UserSlide = props => <UserInfo user={props.user} />;
+
+<UserSlide user={user} />
