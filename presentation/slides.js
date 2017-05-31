@@ -451,21 +451,6 @@ const Slides = (props) => (
         </Slide>
       </SlideSet>
 
-      <SlideSet>
-        <Slide bgColor="secondary">
-          <Heading size={3} textColor="primary">
-            Bonus Track
-          </Heading>
-        </Slide>
-        <Slide bgColor="secondary">
-          <Heading size={6} textColor="primary">
-            Flux is a pattern for managing data flow in your application. The most important concept is that data flows in one direction
-          </Heading>
-        </Slide>
-        <Slide bgColor="secondary">
-          <Image src={props.images.flux} width="100%"/>
-        </Slide>
-      </SlideSet>
 
       <SlideSet>
         <Slide bgColor="secondary">
@@ -482,6 +467,22 @@ const Slides = (props) => (
             React Europe Keynote 2017
           </Heading>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/QW5TE4vrklU" frameborder="0" allowfullscreen></iframe>
+        </Slide>
+      </SlideSet>
+
+      <SlideSet>
+        <Slide bgColor="secondary">
+          <Heading size={3} textColor="primary">
+            Bonus Track
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={6} textColor="primary">
+            Flux is a pattern for managing data flow in your application. The most important concept is that data flows in one direction
+          </Heading>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Image src={props.images.flux} width="100%"/>
         </Slide>
       </SlideSet>
     </Deck>

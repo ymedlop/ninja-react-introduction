@@ -33,7 +33,7 @@ preloader(images);
 const user = {
   photo: images.avatar,
   name: 'Yeray Medina López',
-  company: '@BBVA Paas Studio',
+  company: '@BBVA PaaS Studio',
   social: [
     {
       name: 'github',
