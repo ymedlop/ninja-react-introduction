@@ -216,10 +216,10 @@ const Slides = (props) => (
           <BlockQuote>
             <Quote textSize="1.0em">
               <List textSize="1.0em" padding="0">
-                <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>Difficult to test</ListItem>
-                <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>Difficult to reason about</ListItem>
-                <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>Easy to put business logic in the component</ListItem>
-                <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>Difficult to share information to others.</ListItem>
+                <ListItem textSize="1.0em" style={{ 'listStyleType': 'none' }}>Difficult to test</ListItem>
+                <ListItem textSize="1.0em" style={{ 'listStyleType': 'none' }}>Difficult to reason about</ListItem>
+                <ListItem textSize="1.0em" style={{ 'listStyleType': 'none' }}>Easy to put business logic in the component</ListItem>
+                <ListItem textSize="1.0em" style={{ 'listStyleType': 'none' }}>Difficult to share information to others.</ListItem>
               </List>
             </Quote>
             <Cite>Cam Jackson from 9 things every React.js beginner should know</Cite>
@@ -330,7 +330,7 @@ const Slides = (props) => (
 
         <Slide bgColor="secondary" textColor="primary">
             <List textSize="1.0em" padding="0">
-              <ListItem textSize="1.0em" style={{ display: 'inline-flex' }}>
+              <ListItem textSize="1.0em" style={{ 'listStyleType': 'none' }}>
                 <Link
                   href="https://github.com/acdlite/recompose"
                   target="blank"
