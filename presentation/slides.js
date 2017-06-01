@@ -119,7 +119,7 @@ const Slides = (props) => (
           </Heading>
         </Slide>
         <CodeSlide
-          sizeList={6}
+          size={6}
           lang="js"
           code={require("raw-loader!../assets/examples/imperative1.example")}
           ranges={[
@@ -141,6 +141,12 @@ const Slides = (props) => (
             { loc: [4, 3], image: 'http://s2.quickmeme.com/img/96/9663bb227666e5f862c971df66150ed18f2373794ca058310ecbd2479c726d60.jpg' },
           ]}
         />
+        <Slide bgColor="secondary">
+          <CodePane
+            lang="jsx"
+            source={require("raw-loader!../assets/examples/declarative.example")}
+          />
+        </Slide>
       </SlideSet>
 
       <SlideSet>
