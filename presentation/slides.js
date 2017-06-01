@@ -47,7 +47,7 @@ const Slides = (props) => (
       <SlideSet>
         <ReactSlide image={props.images.introduction} />
         <Slide bgColor="secondary">
-          <Image width="100%" src={props.images.mvcmeme} />
+          <Image src={props.images.mvcmeme} />
         </Slide>
         <QuoteSlide quote="React is a view layer that uses virtual DOM for performance." cite="Someone" />
         <QuoteSlide quote="React can be used as the V in MVC." cite="Someone" />
@@ -58,7 +58,9 @@ const Slides = (props) => (
           <Image width="100%" src={props.images.danview} />
         </Slide>
         <Slide bgColor="secondary">
-          <Image width="100%" src={props.images.mvc} />
+          <Link href="https://groups.google.com/d/msg/reactjs/sB6IPgiXGe4/1os3fnQRAegJ" target="blank">
+            <Image width="100%" src={props.images.mvc} />
+          </Link>
         </Slide>
         <Slide bgColor="secondary">
           <Image width="100%" src={props.images.reactnew} />
@@ -350,6 +352,8 @@ const Slides = (props) => (
                 >
                   Recompose
                 </Link>
+              </ListItem>
+              <ListItem textSize="1.0em" style={{ 'listStyleType': 'none' }}>
                 <Link
                   href="https://egghead.io/lessons/react-compose-multiple-higher-order-components-together-using-recompose"
                   target="blank"
@@ -357,6 +361,8 @@ const Slides = (props) => (
                 >
                   EggHead course
                 </Link>
+              </ListItem>
+              <ListItem textSize="1.0em" style={{ 'listStyleType': 'none' }}>
                 <Link
                   href="https://github.com/timkindberg/egghead-recompose"
                   target="blank"

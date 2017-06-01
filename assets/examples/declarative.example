@@ -11,14 +11,3 @@
     { loc: [4, 7], image: 'http://vignette4.wikia.nocookie.net/monsterlegends/images/8/83/Obama-not-bad-l.png/revision/latest?cb=20160221181532&path-prefix=es' },
   ]}
 />
-
-<CodeSlide
-  size={6}
-  lang="js"
-  code={require("raw-loader!../assets/examples/declarative1.example")}
-  ranges={[
-    { loc: [0, 1], title: "Declarative way" },
-    { loc: [0, 2], title: "Do the Magic" },
-    { loc: [4, 3], image: 'http://s2.quickmeme.com/img/96/9663bb227666e5f862c971df66150ed18f2373794ca058310ecbd2479c726d60.jpg' },
-  ]}
-/>
