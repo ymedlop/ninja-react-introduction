@@ -27,6 +27,7 @@ const images = {
   twitter: require("../assets/images/twitter.png"),
   life: require("../assets/images/life.png"),
   mvc: require("../assets/images/mvc.png"),
+  mvcmeme: require("../assets/images/mvcmeme.jpg"),
 };
 
 preloader(images);

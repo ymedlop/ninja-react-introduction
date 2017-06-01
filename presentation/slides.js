@@ -46,6 +46,9 @@ const Slides = (props) => (
 
       <SlideSet>
         <ReactSlide image={props.images.introduction} />
+        <Slide bgColor="secondary">
+          <Image width="100%" src={props.images.mvcmeme} />
+        </Slide>
         <QuoteSlide quote="React is a view layer that uses virtual DOM for performance." cite="Someone" />
         <QuoteSlide quote="React can be used as the V in MVC." cite="Someone" />
         <Slide bgColor="secondary">
