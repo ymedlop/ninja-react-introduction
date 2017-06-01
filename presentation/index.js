@@ -26,6 +26,7 @@ const images = {
   blog: require("../assets/images/blog.png"),
   twitter: require("../assets/images/twitter.png"),
   life: require("../assets/images/life.png"),
+  mvc: require("../assets/images/mvc.png"),
 };
 
 preloader(images);

@@ -55,6 +55,9 @@ const Slides = (props) => (
           <Image width="100%" src={props.images.danview} />
         </Slide>
         <Slide bgColor="secondary">
+          <Image width="100%" src={props.images.mvc} />
+        </Slide>
+        <Slide bgColor="secondary">
           <Image width="100%" src={props.images.reactnew} />
         </Slide>
         <Slide bgColor="secondary">
